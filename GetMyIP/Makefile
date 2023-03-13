@@ -15,8 +15,8 @@ clean:
 	@rm -rf ${BIN_PATH}/*
 
 compile:
-	GOOS=linux GOARCH=arm GOARM=7 go build -o ${BIN_PATH}/${PROJECT_NAME}_${PLATFORM_ARM}
-	GOOS=linux GOARCH=amd64 go build -o ${BIN_PATH}/${PROJECT_NAME}_${PLATFORM_LINUX}
-	GOOS=windows GOARCH=amd64 go build -o ${BIN_PATH}/${PROJECT_NAME}.${PLATFORM_WINDOWS}
-	GOOS=darwin GOARCH=amd64 go build -o ${BIN_PATH}/${PROJECT_NAME}_${PLATFORM_MACOS}
+	GOOS=linux GOARCH=arm GOARM=7 go build -ldflags "-w -s" -o ${BIN_PATH}/${PROJECT_NAME}_${PLATFORM_ARM}
+	GOOS=linux GOARCH=amd64 go build -ldflags "-w -s" -o ${BIN_PATH}/${PROJECT_NAME}_${PLATFORM_LINUX}
+	GOOS=windows GOARCH=amd64 go build -ldflags "-w -s" -o ${BIN_PATH}/${PROJECT_NAME}.${PLATFORM_WINDOWS}
+	GOOS=darwin GOARCH=amd64 go build -ldflags "-w -s" -o ${BIN_PATH}/${PROJECT_NAME}_${PLATFORM_MACOS}
 

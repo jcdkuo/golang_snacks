@@ -1,4 +1,4 @@
-PROJECT_NAME = dt
+PROJECT_NAME = $(shell basename $${PWD})
 PLATFORM_MACOS = mac
 PLATFORM_LINUX = linux
 PLATFORM_WINDOWS = exe
